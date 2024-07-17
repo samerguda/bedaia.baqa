@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>باقة "بداية"</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            direction: rtl;
+        }
+
+        h1 {
+            color: #4CAF50;
+        }
+
+        .package-details {
+            background-color: #f9f9f9;
+            padding: 20px;
+            margin: 20px auto;
+            border: 1px solid #ddd;
+            width: 80%;
+            text-align: right;
+        }
+
+        .package-details ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .package-details ul li {
+            padding: 8px 0;
+        }
+
+        .contact-info {
+            margin-top: 20px;
+        }
+
+        .contact-info p {
+            font-size: 18px;
+            margin: 5px 0;
+        }
+
+        .hashtags {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #555;
+        }
+
+        .buttons {
+            margin-top: 20px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            margin: 5px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>باقة "بداية"</h1>
+    <div class="package-details">
+        <ul>
+            <li>📌 200 تصميم جرافيك</li>
+            <li>📌 24 فيديو موشن</li>
+            <li>📌 خدمة فوس أوفر مجاني</li>
+            <li>📌 إدارة ثلاث منصات تواصل</li>
+            <li>📌 ستوري يومي</li>
+            <li>📌 خطط محتوى وخدمة دراسة الجدوى</li>
+            <li>📌 5000 متابع مجاني بالإنستجرام والتيك توك</li>
+        </ul>
+        <p>إعلان مليون مشاهدة جوجل - سناب شات - تيك توك</p>
+    </div>
+    <div class="contact-info">
+        <p>إتصل بنا: 📞 0548247897</p>
+    </div>
+    <div class="hashtags">
+        <p>#المدينة_المنورة #markiting #socialmedia #socialmediamarketing #تسويق_الكتروني #كتابة_محتوى #تصميم_شعار #اعلانات_ممولة #تصميم_بروشور #طباعة #فيديو #جرافيك #انشاء_متجر</p>
+    </div>
+    <div class="buttons">
+        <button onclick="sendWhatsApp()">إرسال عبر الواتساب</button>
+        <button onclick="copyContent()">نسخ المحتوى</button>
+        <button onclick="window.print()">طباعة</button>
+    </div>
+    
+    <script>
+        function sendWhatsApp() {
+            const packageDetails = document.querySelector('.package-details').innerText;
+            const contactInfo = document.querySelector('.contact-info').innerText;
+            const hashtags = document.querySelector('.hashtags').innerText;
+            const message = `${packageDetails}\n\n${contactInfo}\n\n${hashtags}`;
+            const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(message)}`;
+            window.open(whatsappUrl, '_blank');
+        }
+
+        function copyContent() {
+            const packageDetails = document.querySelector('.package-details').innerText;
+            const contactInfo = document.querySelector('.contact-info').innerText;
+            const hashtags = document.querySelector('.hashtags').innerText;
+            const message = `${packageDetails}\n\n${contactInfo}\n\n${hashtags}`;
+            const textarea = document.createElement('textarea');
+            textarea.value = message;
+            document.body.appendChild(textarea);
+            textarea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textarea);
+            alert('تم نسخ المحتوى');
+        }
+    </script>
+</body>
+</html>
